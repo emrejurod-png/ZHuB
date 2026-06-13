@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZHuB</title>
+    <title>ZHuB Panel</title>
     
-    <!-- Open Graph for Discord -->
-    <meta property="og:title" content="ZHuB">
-    <meta property="og:description" content="Premium Universal Script. High performance, secure and undetected.">
+    <meta property="og:title" content="ZHuB — Script Hub">
+    <meta property="og:description" content="Premium Universal Execution Environment.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://emrejurod-png.github.io/ZHuB/">
     <meta name="theme-color" content="#ffffff">
@@ -15,57 +14,104 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-glow"></div>
+    <div class="mesh-bg"></div>
 
-    <nav class="navbar">
-        <div class="nav-inner">
-            <div class="logo">ZHuB</div>
-            <div class="status">
-                <span class="status-dot"></span>
-                UNDETECTED
-            </div>
+    <!-- BOOT / LOADER SCREEN -->
+    <div id="boot-screen" class="boot-container">
+        <div class="boot-logo">ZHuB</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loadingBar"></div>
         </div>
-    </nav>
+        <div class="loading-text" id="loadingText">Initializing secure connection...</div>
+    </div>
 
-    <main class="container">
-        <div class="hero">
-            <div class="badge">v3.0.1 Release</div>
-            <h1>The New Standard.</h1>
-            <p>Industry-leading universal script. Engineered for maximum performance and absolute security.</p>
+    <!-- MAIN HUB UI -->
+    <div id="main-app" class="main-app hidden">
+        <div class="app-window">
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo">ZHuB</div>
+                    <span class="version">v3.0</span>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <div class="nav-category">Modules</div>
+                    
+                    <button class="nav-item active" onclick="switchTab('universal')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                        ZHUB | Universal
+                    </button>
+                    
+                    <button class="nav-item disabled" onclick="switchTab('bypass')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        ZHUB | Bypass
+                        <span class="badge">Soon</span>
+                    </button>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="status-dot"></div> Connected
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <main class="content-area">
+                
+                <!-- UNIVERSAL TAB -->
+                <div id="tab-universal" class="tab-content active">
+                    <div class="content-header">
+                        <h2>Universal Core</h2>
+                        <p>The ultimate script execution engine. Compatible with all major environments.</p>
+                    </div>
+
+                    <div class="script-panel">
+                        <div class="panel-top">
+                            <span class="script-name">loader.lua</span>
+                            <button class="copy-btn" id="copyBtn" onclick="copyScript()">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                Copy Script
+                            </button>
+                        </div>
+                        <div class="panel-body">
+                            <code id="scriptText">loadstring(game:HttpGet("https://emrejurod-png.github.io/ZHuB/api/zhub-loader.lua"))()</code>
+                        </div>
+                    </div>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4>Status</h4>
+                            <span class="text-green">Undetected</span>
+                        </div>
+                        <div class="info-card">
+                            <h4>Last Update</h4>
+                            <span>Today</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BYPASS TAB (Coming Soon) -->
+                <div id="tab-bypass" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2>Game Security Bypass</h2>
+                        <p>Advanced module designed to completely hide execution logs and spoof hardware identifiers.</p>
+                    </div>
+
+                    <div class="coming-soon-box">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <h3>Currently in Development</h3>
+                        <p>This module is undergoing heavy testing to ensure 100% safety. It will be available for purchase soon.</p>
+                        <button class="btn-disabled" disabled>Unavailable</button>
+                    </div>
+                </div>
+
+            </main>
         </div>
-
-        <div class="panel">
-            <div class="panel-header">
-                <div class="panel-title">Loader Script</div>
-                <button class="copy-btn" id="copyBtn" onclick="copyScript()">Copy</button>
-            </div>
-            <div class="panel-body">
-                <code id="scriptText">loadstring(game:HttpGet("https://emrejurod-png.github.io/ZHuB/api/zhub-loader.lua"))()</code>
-            </div>
-        </div>
-
-        <div class="features">
-            <div class="feature">
-                <h3>Universal Compatibility</h3>
-                <p>Designed to inject flawlessly on all major executors without errors.</p>
-            </div>
-            <div class="feature">
-                <h3>Absolute Stealth</h3>
-                <p>Advanced obfuscation and anti-detection mechanisms keep your account safe.</p>
-            </div>
-            <div class="feature">
-                <h3>Cloud Updated</h3>
-                <p>The loader automatically fetches the latest offsets and features from our secure servers.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 ZHuB. All rights reserved.</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
