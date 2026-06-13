@@ -2,24 +2,25 @@ function copyCode(elementId, btn) {
     const codeElement = document.getElementById(elementId);
     if (!codeElement) return;
 
-    // Get the text to copy
+    // Get the raw text content without HTML tags
     const textToCopy = codeElement.innerText;
 
-    // Use navigator clipboard API
     navigator.clipboard.writeText(textToCopy).then(() => {
-        // Change button text temporarily
-        const originalText = btn.innerText;
-        btn.innerText = "Copied!";
-        btn.style.background = "#4ade80"; // subtle green
-        btn.style.color = "#000";
+        // Change button state
+        const originalHTML = btn.innerHTML;
+        
+        btn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Copied!</span>
+        `;
+        btn.classList.add('success');
 
+        // Revert after 2 seconds
         setTimeout(() => {
-            btn.innerText = originalText;
-            btn.style.background = "#ffffff";
-            btn.style.color = "#000000";
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('success');
         }, 2000);
     }).catch(err => {
-        console.error('Failed to copy text: ', err);
-        btn.innerText = "Error";
+        console.error('Failed to copy: ', err);
     });
 }

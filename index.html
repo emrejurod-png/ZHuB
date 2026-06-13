@@ -3,76 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZHuB — Scripts</title>
+    <title>ZHuB — Premium Script</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="glow-bg"></div>
 
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">ZHuB</div>
-            <div class="status">System: Online</div>
+        <div class="nav-content">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                ZHuB
+            </div>
+            <div class="nav-status">
+                <div class="status-dot"></div>
+                Undetected
+            </div>
         </div>
     </nav>
 
-    <main class="hero">
-        <div class="hero-text">
-            <h1>The ultimate script catalog.</h1>
-            <p>Secure, fast, and constantly updated. Explore our collection.</p>
-        </div>
+    <main class="container">
+        <header class="hero">
+            <div class="version-badge">v3.0 Release</div>
+            <h1>Universal Script Hub</h1>
+            <p>The most advanced and secure script environment. Built for performance, designed for stealth. Dominate every game with zero compromises.</p>
+        </header>
+
+        <section class="script-section">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>ZHuB Universal Loader</h2>
+                        <span class="tag">Active</span>
+                    </div>
+                    <p class="card-desc">Our primary loader. Automatically bypasses anti-cheats, injects the core payload, and initializes the ESP & Aimbot modules.</p>
+                </div>
+                
+                <div class="code-container">
+                    <div class="code-header">
+                        <span class="lang">LUA</span>
+                        <button class="copy-btn" onclick="copyCode('loader-code', this)">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <span>Copy</span>
+                        </button>
+                    </div>
+                    <div class="code-block">
+                        <code id="loader-code"><span class="keyword">loadstring</span>(<span class="function">game</span>:<span class="method">HttpGet</span>(<span class="string">"https://emrejurod-png.github.io/ZHuB/api/zhub-loader.lua"</span>))()</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog">
+            <h3 class="section-title">Upcoming Modules</h3>
+            <div class="grid">
+                <div class="grid-card disabled">
+                    <div class="grid-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h4>Project Vanguard</h4>
+                    <p>Next-generation anti-kick module. Currently in closed testing.</p>
+                    <span class="status-text">Coming Soon</span>
+                </div>
+                
+                <div class="grid-card disabled">
+                    <div class="grid-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line></svg>
+                    </div>
+                    <h4>Silent Aim V2</h4>
+                    <p>Completely invisible aim redirection with wall-bang logic.</p>
+                    <span class="status-text">In Development</span>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <section class="catalog">
-        <div class="catalog-grid">
-            
-            <!-- Script 1: ZHuB Universal -->
-            <div class="script-card">
-                <div class="card-header">
-                    <h2>ZHuB Universal</h2>
-                    <span class="badge active">Active</span>
-                </div>
-                <p class="card-desc">Our flagship universal script. Includes silent aim, visuals, and anti-kick protection for top-tier gameplay.</p>
-                
-                <div class="code-box">
-                    <code id="script1">loadstring(game:HttpGet("https://emrejurod-png.github.io/ZHuB/api/zhub-loader.lua"))()</code>
-                    <button class="copy-btn" onclick="copyCode('script1', this)">Copy</button>
-                </div>
-            </div>
-
-            <!-- Script 2: Coming Soon -->
-            <div class="script-card disabled">
-                <div class="card-header">
-                    <h2>Project X</h2>
-                    <span class="badge dev">In Development</span>
-                </div>
-                <p class="card-desc">A new upcoming script tailored for specific competitive games. Currently undergoing closed beta testing.</p>
-                <div class="code-box">
-                    <code>Not yet available</code>
-                    <button class="copy-btn disabled-btn">Copy</button>
-                </div>
-            </div>
-
-            <!-- Script 3: Coming Soon -->
-            <div class="script-card disabled">
-                <div class="card-header">
-                    <h2>ZHuB Utility</h2>
-                    <span class="badge dev">Soon</span>
-                </div>
-                <p class="card-desc">General account security and server management tools. Release date to be announced soon.</p>
-                <div class="code-box">
-                    <code>Not yet available</code>
-                    <button class="copy-btn disabled-btn">Copy</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
     <footer>
-        <p>&copy; 2026 ZHuB. Private use only.</p>
+        <p>&copy; 2026 ZHuB. For educational purposes only.</p>
     </footer>
 
     <script src="script.js"></script>
