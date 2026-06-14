@@ -372,3 +372,83 @@ body {
     font-weight: 500;
     cursor: not-allowed;
 }
+
+/* Executor Box */
+.executor-box {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.executor-icon {
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+}
+
+.executor-info {
+    flex: 1;
+}
+
+.executor-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.executor-features {
+    list-style: none;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.executor-features li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.executor-features li::before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    margin-bottom: 16px;
+}
+
+.download-btn:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(255,255,255,0.3);
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: #666;
+    font-style: italic;
+}
