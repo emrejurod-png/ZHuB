@@ -53,13 +53,10 @@
                         ZHUB | Universal
                     </button>
                     
-                    <button class="nav-item disabled" onclick="switchTab('bypass')">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        ZHUB | Bypass
-                        <span class="badge">Soon</span>
-                    </button>
-
-                    <div class="nav-category" style="margin-top: 20px;">Store</div>
+                    <button class="nav-item" onclick="switchTab('ta')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        ZHuB I TA Turkish Armed Forces
+                    </button>                    <div class="nav-category" style="margin-top: 20px;">Store</div>
                     <button class="nav-item" onclick="switchTab('premium')">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                         <span style="color: #f59e0b;">ZHuB Premium</span>
@@ -119,22 +116,36 @@
                     </div>
                 </div>
 
-                <!-- BYPASS TAB (Coming Soon) -->
-                <div id="tab-bypass" class="tab-content hidden">
+                <!-- TA TAB -->
+                <div id="tab-ta" class="tab-content hidden">
                     <div class="content-header">
-                        <h2>Game Security Bypass</h2>
-                        <p>Advanced module designed to completely hide execution logs and spoof hardware identifiers.</p>
+                        <h2>ZHuB I TA Turkish Armed Forces</h2>
+                        <p>Specialized combat and tactical execution environment.</p>
                     </div>
 
-                    <div class="coming-soon-box">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        <h3>Currently in Development</h3>
-                        <p>This module is undergoing heavy testing to ensure 100% safety. It will be available for purchase soon.</p>
-                        <button class="btn-disabled" disabled>Unavailable</button>
+                    <div class="script-panel">
+                        <div class="panel-top">
+                            <span class="script-name">ta_loader.lua</span>
+                            <button class="copy-btn" id="copyBtnTA" onclick="navigator.clipboard.writeText(document.getElementById('scriptTextTA').innerText); this.innerHTML='Copied!'; setTimeout(()=>this.innerHTML='<svg width=\'14\' height=\'14\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'9\' y=\'9\' width=\'13\' height=\'13\' rx=\'2\' ry=\'2\'></rect><path d=\'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\'></path></svg> Copy Script', 2000)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                Copy Script
+                            </button>
+                        </div>
+                        <div class="panel-body">
+                            <code id="scriptTextTA">loadstring(game:HttpGet("https://emrejurod-png.github.io/ZHuB/api/scripts/ta-obfuscated.lua"))()</code>
+                        </div>
                     </div>
-                </div>
 
-                <!-- EXECUTOR TAB -->
+                    <div class="executor-info" style="margin-top: 20px;">
+                        <h3>Kurulum ve Kullanım</h3>
+                        <ul class="executor-features" style="grid-template-columns: 1fr;">
+                            <li>1. Solara V3 veya desteklenen bir Executor açın.</li>
+                            <li>2. Yukarıdaki "Copy Script" butonuna basıp kodu kopyalayın.</li>
+                            <li>3. Kodu Executor'a yapıştırıp Execute'a (Çalıştır) basın.</li>
+                            <li>4. Sağ Shift (Right Shift) tuşu ile menüyü açıp kapatabilirsiniz.</li>
+                        </ul>
+                    </div>
+                </div>                <!-- EXECUTOR TAB -->
                 <div id="tab-executor" class="tab-content hidden">
                     <div class="content-header">
                         <h2>Solara Executor V3</h2>
