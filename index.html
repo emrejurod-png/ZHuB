@@ -42,7 +42,7 @@
             <aside class="sidebar">
                 <div class="sidebar-header">
                     <div class="logo">ZHuB</div>
-                    <span class="version">v3.0</span>
+                    <span class="version">v4.0 Alpha</span>
                 </div>
                 
                 <nav class="sidebar-nav">
@@ -50,13 +50,15 @@
                     
                     <button class="nav-item active" onclick="switchTab('universal')">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
-                        ZHUB | Universal
+                        Update Notice
                     </button>
                     
-                    <button class="nav-item" onclick="switchTab('ta')">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                        ZHuB I TA Turkish Armed Forces
-                    </button>                    <div class="nav-category" style="margin-top: 20px;">Store</div>
+                    <button class="nav-item" onclick="switchTab('misc')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                        Misc & Info
+                    </button>
+
+                    <div class="nav-category" style="margin-top: 20px;">Store</div>
                     <button class="nav-item" onclick="switchTab('premium')">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                         <span style="color: #f59e0b;">ZHuB Premium</span>
@@ -84,67 +86,59 @@
             <!-- Content Area -->
             <main class="content-area">
                 
-                <!-- UNIVERSAL TAB -->
+                <!-- UPDATE NOTICE TAB -->
                 <div id="tab-universal" class="tab-content active">
                     <div class="content-header">
-                        <h2>Universal Core</h2>
-                        <p>The ultimate script execution engine. Compatible with all major environments.</p>
+                        <h2>Scripts are Updating!</h2>
+                        <p>We are temporarily hiding our scripts as we prepare a massive update.</p>
                     </div>
 
-                    <div class="script-panel">
-                        <div class="panel-top">
-                            <span class="script-name">loader.lua</span>
-                            <button class="copy-btn" id="copyBtn" onclick="copyScript()">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                                Copy Script
-                            </button>
-                        </div>
-                        <div class="panel-body">
-                            <code id="scriptText">loadstring(game:HttpGet("https://emrejurod-png.github.io/ZHuB/api/zhub-loader.lua"))()</code>
-                        </div>
+                    <div class="coming-soon-box" style="border-color: rgba(16, 185, 129, 0.3);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.92-10.26l3.08-3.08"></path></svg>
+                        <h3 style="color: #10b981;">Returning Soon, Stronger Than Ever</h3>
+                        <p style="max-width: 450px; line-height: 1.6;">
+                            Our scripts were becoming outdated and frankly weren't doing much. The key system was annoying and bad. We've decided to pull them down temporarily while we rebuild our core engine from scratch.
+                        </p>
+                        <p style="max-width: 450px; line-height: 1.6; margin-top: -15px;">
+                            We will be back as soon as possible with a far more powerful, keyless, and feature-rich experience. Thank you for your patience!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- MISC TAB -->
+                <div id="tab-misc" class="tab-content hidden">
+                    <div class="content-header">
+                        <h2>Misc & Info</h2>
+                        <p>General information and future roadmap.</p>
                     </div>
 
                     <div class="info-cards">
                         <div class="info-card">
-                            <h4>Status</h4>
-                            <span class="text-green">Undetected</span>
+                            <h4>Why we removed keys</h4>
+                            <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-secondary); display: block; margin-top: 8px; line-height: 1.5;">
+                                Keys are annoying. We realized that forcing users through linkvertises just to get a key for basic scripts wasn't fair. The future of ZHuB will focus on accessibility and user experience first.
+                            </span>
                         </div>
                         <div class="info-card">
-                            <h4>Last Update</h4>
-                            <span>Today</span>
+                            <h4>Development Status</h4>
+                            <span class="text-green" style="font-size: 1rem;">Active Overhaul</span>
+                            <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-secondary); display: block; margin-top: 8px;">
+                                We are rewriting the backend to support new environments and bypasses.
+                            </span>
+                        </div>
+                        <div class="info-card" style="grid-column: span 2;">
+                            <h4>What to Expect in v4</h4>
+                            <ul style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 10px; list-style-position: inside; line-height: 1.6;">
+                                <li>Completely Keyless Experience</li>
+                                <li>New Exploit Hub Integration</li>
+                                <li>Better UI & Themes</li>
+                                <li>More Powerful Game-Specific Modules</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- TA TAB -->
-                <div id="tab-ta" class="tab-content hidden">
-                    <div class="content-header">
-                        <h2>ZHuB I TA Turkish Armed Forces</h2>
-                    </div>
-
-                    <div class="script-panel">
-                        <div class="panel-top">
-                            <span class="script-name">ta_loader.lua</span>
-                            <button class="copy-btn" id="copyBtnTA" onclick="navigator.clipboard.writeText(document.getElementById('scriptTextTA').innerText); this.innerHTML='Copied!'; setTimeout(()=>this.innerHTML='<svg width=\'14\' height=\'14\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><rect x=\'9\' y=\'9\' width=\'13\' height=\'13\' rx=\'2\' ry=\'2\'></rect><path d=\'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\'></path></svg> Copy Script', 2000)">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                                Copy Script
-                            </button>
-                        </div>
-                        <div class="panel-body">
-                            <code id="scriptTextTA">loadstring(game:HttpGet("https://emrejurod-png.github.io/ZHuB/api/scripts/ta-obfuscated.lua"))()</code>
-                        </div>
-                    </div>
-
-                    <div class="executor-info" style="margin-top: 20px;">
-                        <h3>Installation Guide</h3>
-                        <ul class="executor-features" style="grid-template-columns: 1fr;">
-                            <li>1. Open Solara V3 or any supported Executor.</li>
-                            <li>2. Click the "Copy Script" button above to copy the loadstring.</li>
-                            <li>3. Paste the code into your Executor and click Execute.</li>
-                            <li>4. You can toggle the menu in-game using the Right Shift key.</li>
-                        </ul>
-                    </div>
-                </div>                <!-- EXECUTOR TAB -->
+                <!-- EXECUTOR TAB -->
                 <div id="tab-executor" class="tab-content hidden">
                     <div class="content-header">
                         <h2>Solara Executor V3</h2>
